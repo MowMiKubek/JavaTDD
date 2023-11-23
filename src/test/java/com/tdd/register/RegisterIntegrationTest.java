@@ -3,7 +3,6 @@ package com.tdd.register;
 import com.google.gson.Gson;
 import com.tdd.register.model.Student;
 import com.tdd.register.repository.StudentRepository;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,12 +23,12 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-/*@SpringBootTest
+@SpringBootTest
 @AutoConfigureTestDatabase
 @AutoConfigureMockMvc
-@EnableAutoConfiguration(exclude=SecurityAutoConfiguration.class)*/
+@EnableAutoConfiguration(exclude=SecurityAutoConfiguration.class)
 public class RegisterIntegrationTest {
-  /*  @Autowired
+    @Autowired
     private MockMvc mockMvc;
 
     @Autowired
@@ -72,5 +71,5 @@ public class RegisterIntegrationTest {
     private Student createTestStudent(String name, String surname, String className) {
         Student student = new Student(null,name,surname, className);
         return repository.saveAndFlush(student);
-    }*/
+    }
 }
