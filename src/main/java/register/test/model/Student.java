@@ -1,4 +1,4 @@
-package com.tdd.register.model;
+package register.test.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

@@ -1,8 +1,6 @@
-package com.tdd.register;
+package register.test;
 
 import com.google.gson.Gson;
-import com.tdd.register.model.Student;
-import com.tdd.register.repository.StudentRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +11,8 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
+import register.test.repository.StudentRepository;
+import register.test.model.Student;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.greaterThanOrEqualTo;
@@ -48,11 +48,11 @@ public class RegisterIntegrationTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$",hasSize(greaterThanOrEqualTo(2))))
                 .andExpect(jsonPath("$[0].firstname", is("Paul")))
-                .andExpect(jsonPath("$[0].firstname", is("Axel")))
+                .andExpect(jsonPath("$[1].firstname", is("Axel")))
                 .andExpect(jsonPath("$[0].lastname", is("Simon")))
-                .andExpect(jsonPath("$[0].lastname", is("Manhattan")))
+                .andExpect(jsonPath("$[1].lastname", is("Manhattan")))
                 .andExpect(jsonPath("$[0].className", is("VIIIA")))
-                .andExpect(jsonPath("$[0].className", is("VIIIB")));
+                .andExpect(jsonPath("$[1].className", is("VIIIB")));
     }
 
     @Test
